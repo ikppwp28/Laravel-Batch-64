@@ -1,0 +1,36 @@
+soal 1:
+
+CREATE DATABASE myshop;
+
+soal 2: 
+
+CREATE TABLE users ( id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT null, email VARCHAR(255) NOT null ), password VARCHAR(255) NOT null );
+
+CREATE TABLE categories ( id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT null );
+
+CREATE TABLE items ( id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT null, description VARCHAR(255) NOT null , price INT, stock INT, category_id INT, FOREIGN KEY (category_id) REFERENCES categories(id) );
+
+soal 3:
+
+INSERT INTO users (id, name, email, password) VALUES (1,'John Doe','john@doe.com','john123'), (2,'Jane Doe','jane@doe.com','jenita123');
+
+INSERT INTO categories (id, name) VALUES (1,'gadget'), (2,'cloth'), (3,'men'),(4,'women'),(5,'branded');
+
+INSERT INTO items (id, name, description, price, stock, category_id) VALUES (1, 'Sumsang b50', 'hape keren dari merek sumsang', 4000000, 100, 1), (2,'Uniklooh', 'baju keren dari brand ternama', 500000, 50, 2), (3,'IMHO Watch', 'jam tangan anak yang jujur banget', 2000000, 10, 1);
+
+soal 4:
+
+a. SELECT id, name, email FROM `users`;
+
+b. SELECT * FROM `items` WHERE price > 1000000;
+b. SELECT * FROM items WHERE name LIKE '%watch%';
+
+c. SELECT a.name, a.description, a.price, a.stock, a.category_id, b.name as kategori
+FROM items a
+INNER JOIN categories b ON a.category_id = b.id;
+
+soal 5:
+
+UPDATE items
+SET name = 'sumsang b50', price = 2500000
+WHERE id = 1;
