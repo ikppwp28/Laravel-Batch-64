@@ -8,30 +8,29 @@
       </a>
 
       <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero">Home</a></li>
-          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="team.html">Team</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+        <ul class="d-flex align-items-center">
+          <li><a href="/">Home</a></li>
+          <li><a href="/category">Category</a></li>
+          <li><a href="/books">Books</a></li>
+          @auth
+          <li><a href="/profile">Profile</a></li>
+          @endauth
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
+
+    <div class="d-flex align-items-center ms-4">
+        @guest
+            <a href="/login" class="btn btn-primary me-3">Login</a>
+            <a href="/register" class="btn btn-info me-3">Register</a>
+        @endguest
+
+        @auth
+            <form action="/logout" method="POST" class="ms-3">
+                @csrf
+                <input type="submit" value="Logout" class="btn btn-danger">
+            </form>
+        @endauth
+    </div>
     </div>
   </header>

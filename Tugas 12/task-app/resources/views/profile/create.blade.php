@@ -1,12 +1,11 @@
 @extends('layouts.master')
 @section('title')
-    Edit Category Book
+    Create Profil
 @endsection
 
 @section('content')
-<form method= "POST", action="/category/{{$category->id}}">
+<form method= "POST", action="/profile">
     @csrf
-    @method('PUT')
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -19,12 +18,12 @@
     @endif
 
     <div class="mb-3">
-        <label class="form-label">Category Name</label>
-        <input type="text" class="form-control" name="name" value="{{$category->name}}">
+        <label class="form-label">Age</label>
+        <input type="number" class="form-control" name="age">
     </div>
     <div class="mb-3">
-        <label class="form-label">Category Description</label>
-        <textarea name="description" class="form-control" cols="30" rows="10">{{$category->description}}</textarea>
+        <label class="form-label">Bio</label>
+        <textarea name="bio" class="form-control" cols="30" rows="10"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

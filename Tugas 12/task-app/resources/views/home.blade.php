@@ -5,6 +5,16 @@
 @endsection
 
 @section('content')
+@if (session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
+@if (session('error'))
+<div class="alert alert-danger">
+    {{ session('error') }}
+</div>
+@endif
     <article>
         <h3>Benefit Join di SanberBook</h3>
         <ul>
@@ -18,7 +28,7 @@
         <h3>Cara Bergabung ke SanberBook</h3>
         <ol>
             <li>Mengunjungi Website ini</li>
-            <li>Mendaftar di <a href="{{ url('/form') }}"> Form Sign Up </a></li>
+            <li>Mendaftar di <a href="/register"> Form Sign Up </a></li>
             <li>Selesai!</li>
         </ol>
     </article>

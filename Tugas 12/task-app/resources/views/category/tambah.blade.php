@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    Tambah Genres
+    Add Category Book
 @endsection
 
 @section('content')
@@ -18,11 +18,11 @@
     @endif
 
     <div class="mb-3">
-        <label class="form-label">Genres Name</label>
+        <label class="form-label">Category Name</label>
         <input type="text" class="form-control" name="name">
     </div>
     <div class="mb-3">
-        <label class="form-label">Genres Description</label>
+        <label class="form-label">Category Description</label>
         <textarea name="description" class="form-control" cols="30" rows="10"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
